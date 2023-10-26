@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk purchase | Home</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body class="bg-bg_black">
+    <header>
+        <img id="icon" src="../media/3d icons.svg" alt="">
+    </header>
+    <!-- <div id="overlay" class="bg-bg_black">
+        <div class="flex items-center mx-6 my-10 justify-between">
+            <h1 class="text-white font-semibold" >McDonald's</h1>
+            <img src="./media/add.svg" alt="" id="close_overlay">
+        </div>
+        <div class="mx-6">
+            <h1 class="text-light mb-8">Breakfast</h1>
+            <h1 class="text-light mb-8">Burgers</h1>
+            <h1 class="text-light">Beverages</h1>
+        </div>
+        <div class="mx-6 mt-[4.5rem]">
+            <h1  class="text-light mb-8">WhatsApp us</h1>
+            <h1  class="text-light mb-8">Share with friends</h1>
+            <h1  class="text-light mb-8">Open map</h1>
+        </div>
+        <div class="language-div mx-6 ">
+            <div class="language-dropdown flex justify-between rounded-xl p-4" onclick="toggleLanguageOptions()">
+                <span id="selectedLanguage">English</span>
+            </div>
+            <img class="dropdown-arrow " src="./media/arrow-down.svg" alt="">
+            <div class="language-options rounded-br-xl rounded-bl-xl" id="languageOptions" onmouseleave="hideLanguageOptions()">
+                <div class="language-option " onclick="selectLanguage('English')">English</div>
+                <div class="language-option" onclick="selectLanguage('Arabic')">Arabic</div>
+                <div class="language-option" onclick="selectLanguage('Spanish')">Spanish</div>
+                <div class="language-option" onclick="selectLanguage('Chinese')">Chinese</div>
+            </div>
+        </div>
+    </div> -->
+    <section>
+        <div class="flex items-center justify-center gap-2">
+            <img src="../media/timer.svg" alt="">
+            <p class="text-sm text-white mb-2">Campaign time left</p>
+        </div>
+        <div id="timer" class="text-white font-extrabold tracking-[0.815rem] flex justify-center ml-4 mb-12">00:00:00</div>
+
+        <div>
+            <h1 class="text-center text-primary font-medium ">jassim</h1>
+            <div class="flex justify-center">
+                <img src="../media/1 75.svg" alt="">
+            </div>
+            <div class="bg-[#333] h-1 w-[17rem] flex justify-center mb-7"  ></div>
+            <p class="text-white text-center mb-14"><span>9</span> Products left !</p>
+            <div class="flex justify-center gap-4 px-4">
+                <button class="text-primary w-[9.5rem] py-2 bulk-btn rounded-3xl" id="shareButton">Share</button>
+                <button class="text-primary w-[9.5rem] py-2 bulk-btn rounded-3xl border-[1px] border-primary" id="claimButton">Claim Now</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content flex flex-col gap-4 ">
+                    <h1 class="text-primary">Claim your offer</h1>
+                    <p class="text-[#DEE6E4]">Spicy Chicken Burger</p>
+                    <p class="text-primary text-xl"><span class="text-5xl font-extrabold">14%</span>OFF</p>
+                    <input class=" text-[#293330] p-2 rounded-md w-[100%]"  type="text" name="" id="" placeholder="Enter your name">
+                    <p class="text-[#DEE6E4] flex justify-end"><span>3</span> more person left</p>
+                    <div class="flex justify-center gap-4 ">
+                        <button class="text-primary w-[100%] py-2 claim-btn rounded-3xl " id="cancelButton">Cancel</button>
+                        <button class="text-primary w-[100%]  py-2 claim-btn rounded-3xl border-[1px] border-primary" >Confirm</button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+    <footer class="absolute bottom-0 ">
+        <div class="mx-6 mb-8">
+            <h1 class="text-lg text-[#999999] mb-2">How this works</h1>
+            <ul class="text-[#999999] list-inside list-item">
+                <li class="list-item list-inside">Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+                <li >Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+            </ul>
+        </div>
+    </footer>
+
+    
+
+    
+
+    <script >
+
+        function startTimer(durationInSeconds) {
+            const timerElement = document.getElementById('timer');
+
+            let secondsRemaining = durationInSeconds;
+
+            function updateTimer() {
+                const hours = Math.floor(secondsRemaining / 3600);
+                const minutes = Math.floor((secondsRemaining % 3600) / 60);
+                const seconds = secondsRemaining % 60;
+
+                const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                timerElement.textContent = formattedTime;
+
+                if (secondsRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    timerElement.textContent = '00:00:00'; // Optional: You can customize what happens when the timer reaches 0.
+                } else {
+                    secondsRemaining--;
+                }
+            }
+
+            const timerInterval = setInterval(updateTimer, 1000); // Update the timer every second.
+        }
+
+        // Example: Start a timer with a duration of 1 hour (3600 seconds).
+        startTimer(3800);
+
+        // Get the modal and buttons
+        const modal = document.getElementById('myModal');
+        const claimButton = document.getElementById('claimButton');
+        const closeModal = document.getElementById('closeModal');
+        const cancelButton = document.getElementById('cancelButton'); // Get the Cancel button by id
+
+        // When the Claim Now button is clicked, display the modal
+        claimButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        // When the close button (X) is clicked, hide the modal
+        // closeModal.addEventListener('click', () => {
+        //     modal.style.display = 'none';
+        // });
+
+        // When the Cancel button is clicked, hide the modal
+        cancelButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal if the user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    
+    </script>
+</body>
+</html>
