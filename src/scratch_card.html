@@ -16,7 +16,7 @@
 .canvas {
   position: absolute;
   top: 12rem;
-  left:36rem;
+  left:37rem;
   border-radius: 20px;
   width: 22rem;
   height: 25rem;
@@ -38,22 +38,24 @@
     color: #60C2A2;
 }
 
-@media only screen and (max-width: 600px){
+ @media only screen and (max-width:480px){
   .canvas {
-  position: absolute;
-  top: 13.4rem;
-  left:0;
-  border-radius: 20px;
-  width: 22rem;
-  height: 22rem;
+  top: 12rem;
+  left:0rem;
 }
+@media only screen and (min-width:400px){
+  .canvas{
+    left: 2rem;
+  }
+}
+
 #bus{
   margin-left: 5rem;
 }
 .sp{
   margin-left: 10px;
 }
-}
+
     </style>
 </head>
 <body class="bg-black_3">
@@ -130,7 +132,7 @@
           <h2 class="text-light flex justify-center text-[19.68px]" id="bar">Chance to win upto 30% Off </h2>
         </div>
         <!-- <div id="bus" class="flex justify-center text-light box">
-          <a href="#">Redeem now</a>
+          <a href="scratch_card.html">Redeem now</a>
         </div> -->
         <div class="flex justify-center items-center">
           <div class="text-[#999] text-[1.23rem] pl-3">
@@ -153,7 +155,7 @@
       </section>
 
     </div>
-    <canvas class="canvas" id="js-canvas" width="300" height="300" ></canvas>
+    <canvas class="canvas " id="js-canvas" width="300" height="300" ></canvas>
 
     <div id="overlay" class="bg-bg_black">
       <div class="flex items-center mx-6 my-10 justify-between">
@@ -169,7 +171,7 @@
           <h1  class="text-light mb-8">WhatsApp us</h1>
           <h1  class="text-light mb-8">Share with friends</h1>
           <h1  class="text-light mb-8">Open map</h1>
-          <a href="./scratch_card.html">helo</a>
+          <a href="">helo</a>
       </div>
       <div class="language-div mx-6 ">
           <div class="language-dropdown flex justify-between rounded-xl p-4" onclick="toggleLanguageOptions()">

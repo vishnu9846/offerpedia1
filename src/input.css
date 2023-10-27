@@ -75,3 +75,17 @@ a{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
+#date{
+    border-width: medium;
+    padding: 3px;
+    width: 13rem;
+    padding-left: 14px;
+    border-radius: 37px;
+    text-align: center;
+    background-color: #DEE6E4;
+}
+.a{
+    position: relative;
+    top: -50px;
+}
