@@ -3,102 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OfferPedia | Product</title>
+    <title>OfferPedia | Order</title>
     <link rel="stylesheet" href="../dist/style.css">
     <link rel="stylesheet" href="./input.css">
-    <style>
-        body {
-  padding: 20px 0;
-}
-
-
-
-.canvas {
-  position: absolute;
-  top: 12rem;
-  left:37rem;
-  border-radius: 20px;
-  width: 22rem;
-  height: 25rem;
-}
-
-.form {
-  padding: 20px;
-}
-#bus{
-    border-width: medium;
-    padding: 3px;
-    width: 13rem;
-    padding-left: 14px;
-    border-radius: 37px;
-    text-align: center;
-    margin-left: 41rem;
-    display: flex;
-    justify-content: center;
-    color: #60C2A2;
-}
-
- @media only screen and (max-width:480px){
-  .canvas {
-  top: 12rem;
-  left:0rem;
-}
-@media only screen and (min-width:400px){
-  .canvas{
-    left: 2rem;
-  }
-}
-
-#bus{
-  margin-left: 5rem;
-}
-.sp{
-  margin-left: 10px;
-}
-
-    </style>
 </head>
-<body class="bg-black_3">
-
-    <!-- ==== header starts here ==== -->
-
-    <header class="flex items-center justify-between pr-4">
-        <div>
-            <img id="icon" src="./media/3d icons.svg" alt="OfferPedia Logo">
-        </div>
-        <div>
-          <div id="overlay" class="">
-            <div class="flex items-center mx-6 my-10 justify-between">
-                <h1 class="text-white font-semibold" >McDonald's</h1>
-                <img src="./media/add.svg" alt="" id="close_overlay">
-            </div>
-            <div class="mx-6">
-                <h1 class="text-light mb-8">Breakfast</h1>
-                <h1 class="text-light mb-8">Burgers</h1>
-                <h1 class="text-light">Beverages</h1>
-            </div>
-            <div class="mx-6 mt-[4.5rem]">
-                <h1  class="text-light mb-8">WhatsApp us</h1>
-                <h1  class="text-light mb-8">Share with friends</h1>
-                <h1  class="text-light mb-8">Open map</h1>
-                <a href="./scratch_card.html">helo</a>
-            </div>
-            <div class="language-div mx-6 ">
-                <div class="language-dropdown flex justify-between rounded-xl p-4" onclick="toggleLanguageOptions()">
-                    <span id="selectedLanguage">English</span>
-                </div>
-                <img class="dropdown-arrow " src="./media/arrow-down.svg" alt="">
-                <div class="language-options rounded-br-xl rounded-bl-xl" id="languageOptions" onmouseleave="hideLanguageOptions()">
-                    <div class="language-option " onclick="selectLanguage('English')">English</div>
-                    <div class="language-option" onclick="selectLanguage('Arabic')">Arabic</div>
-                    <div class="language-option" onclick="selectLanguage('Spanish')">Spanish</div>
-                    <div class="language-option" onclick="selectLanguage('Chinese')">Chinese</div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </header>
-
+<body class="bg-black ">
     <div class="" id="js-container">
 
 
@@ -109,57 +18,57 @@
       </div>
       <section>
           <div>
-              <h1 class="text-white flex justify-center font-bot text-[1.5rem]">CampaignName</h1>
-              <h2 id="bar1" class="text-primary flex justify-center text-[19.68px] pt-2">Scratch here to reveal your price</h2>   
+              <h1 class="text-white flex justify-center font-bot text-[2.5rem]">CampaignName</h1>
+              <h2 id="bar1" class="text-primary flex justify-center text-[1.5rem] pt-2">Scratch here to reveal your price</h2>   
 
           </div>
       </section>
-      <section class="flex justify-center mt-10">
-          <div class="bg-light rounded-xl flex justify-center pt-5  w-[21rem] h-[22rem]">
+      <section class="flex justify-center my-10">
+          <div class="bg-light rounded-xl flex justify-center py-5 text-center w-[20rem] h-[19rem]">
               <div class="">
                   <h1 class="text-bg_black text-[1.32rem] font-extrabold mx-12" >Congratulations!</h1>
-                  <img class="pt-3 mx-12" src="./media/1 75.svg" alt="">
+                  <img class="pl-[65px]" src="./media/1 75.svg" alt="">
                   <h1 class="text-primary text-2xl pt-2 mx-12"><span class="text-[4rem] text-primary font-extrabold">10%</span>OFF</h1>
                   <h1 class="text-primary font-bold text-[1.23rem] pt-5 mx-12">Fajitha Sandwitch</h1>
                   <h1>Save up to 10% on your next purchase.</h1>
+                    <div class="flex justify-center relative bottom-[18.5rem] w-[23rem] h-[26rem] left-10 rounded-2xl">
+                        <canvas class="canvas " id="js-canvas" width="400" height="400" ></canvas>
+                    </div>
               </div>
+              <!-- <div class="absolute left-[38.5rem]  ipad_min:left-[5.55rem] phone_max:left-[14.5rem] mobile:left-[10.5rem] ipad:left-[19.5rem]">
+                <canvas class="canvas " id="js-canvas" width="300" height="300" ></canvas>
+               </div> -->
           </div>
       </section>
 
 
       <section class="my-16">
         <div>
-          <h2 class="text-light flex justify-center text-[19.68px]" id="bar">Chance to win upto 30% Off </h2>
+          <h2 class="text-light flex justify-center text-[2rem]" id="bar">Chance to win upto 30% Off </h2>
         </div>
-        <!-- <div id="bus" class="flex justify-center text-light box">
-          <a href="scratch_card.html">Redeem now</a>
-        </div> -->
         <div class="flex justify-center items-center">
-          <div class="text-[#999] text-[1.23rem] pl-3">
+          <div class="text-[#999] text-[1.5rem] pl-3">
               <h2 class="flex">How this works</h2>
-              <ul class="pl-10">
+              <ul class="pl-5">
                   <li><span>*</span> Aut dicta quia. Ut repellat autem vitae. <span class="sp"> Cupiditate eaque</span></li>
                   <li><span>* </span>Corrupti voluptatum eos non adipisci <span class="sp">soluta voluptate. Est maxime est.</span></li>
               </ul>
           </div>
         </div>
         <div class="flex justify-center pt-5">
-          <div class="text-[#999] text-[1.23rem] pl-3">
+          <div class="text-[#999] text-[1.5rem] pl-3">
               <h2 class="flex">Terms and condition</h2>
-              <ul class="pl-10">
+              <ul class="pl-5">
                   <li><span>*</span> Aut dicta quia. Ut repellat autem vitae. <span class="sp"> Cupiditate eaque</span></li>
                   <li><span>*</span> Corrupti voluptatum eos non adipisci <span class="sp"> soluta voluptate. Est maxime est.</span></li>
               </ul>
           </div>
         </div>
       </section>
-
     </div>
-    <canvas class="canvas " id="js-canvas" width="300" height="300" ></canvas>
 
-  </div>
-    <script src="new.js"></script>
-    
+
+
     <script>
         (function() {
   
@@ -277,17 +186,21 @@ function handlePercentage(filledInPixels) {
       canvas.parentNode.removeChild(canvas); 
     }
     
+
     var barElement = document.getElementById('bar');
     if (barElement) {
-      var busElement = document.createElement('bus');
-      busElement.id = 'bus';
-      busElement.textContent = 'Redeem now';
-      barElement.parentNode.replaceChild(busElement, barElement);
+    var busElement = document.createElement('a'); // Change the element to an anchor
+    busElement.id = 'bus';
+    busElement.href = 'scratch_card_barcode.html'; // Set the href attribute to your desired URL
+    busElement.textContent = 'Redeem now'; // Set the link text
+    barElement.parentNode.replaceChild(busElement, barElement);
     }
+
     var barElement1 = document.getElementById('bar1');
     if (barElement1) {
-      barElement1.parentNode.removeChild(barElement1);
+    barElement1.parentNode.removeChild(barElement1);
     }
+
   }
 }
 
@@ -295,5 +208,6 @@ function handlePercentage(filledInPixels) {
 })();
 
 </script>    
+
 </body>
 </html>

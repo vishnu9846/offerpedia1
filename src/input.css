@@ -89,3 +89,24 @@ a{
     position: relative;
     top: -50px;
 }
+#bus{
+    border-width: medium;
+    padding: 4px;
+    width: 13rem;
+    padding-left: 14px;
+    border-radius: 37px;
+    text-align: center;
+    margin-left: 41rem;
+    display: flex;
+    justify-content: center;
+    color: #60C2A2;
+    display: flex;
+    z-index: 1;
+    margin-top: 5rem;
+}
+
+@media only screen and (max-width:700px){
+    #bus{
+        margin-left:4rem;
+      }
+  }
