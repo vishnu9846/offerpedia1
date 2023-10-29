@@ -225,5 +225,21 @@ function handlePercentage(filledInPixels) {
 
 </script>    
 
+<script>
+  window.addEventListener('load', function () {
+      var bagSection = document.getElementById('bag'); // Get the bag section by its ID
+      setTimeout(function () {
+          if (bagSection) {
+              bagSection.style.display = 'block'; // Show the bag section after a delay
+              bagSection.style.display = 'flex'; 
+              bagSection.style.justifyContent = 'center';
+              bagSection.style.alignItems = 'center';
+          }
+      }, 500); // Delay the appearance of the bag section for 5 seconds (5000 milliseconds)
+  });
+
+  // Your handlePercentage function here
+</script>
+
 </body>
 </html>

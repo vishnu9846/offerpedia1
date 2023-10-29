@@ -111,6 +111,11 @@ a{
 } */
 
 
+#bag {
+    display: none; Initially hide the bag section
+}
+
+
 @media only screen and (max-width:700px){
     #bus{
         margin-left:6rem;
