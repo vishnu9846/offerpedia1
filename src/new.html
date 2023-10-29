@@ -23,9 +23,11 @@
 
           </div>
       </section>
-      <section class="flex justify-center my-10">
+
+
+      <section id="bag" class="flex justify-center my-10">
           <div class="bg-light rounded-xl flex justify-center py-5 text-center w-[20rem] h-[19rem]">
-              <div class="">
+              <div id>
                   <h1 class="text-bg_black text-[1.32rem] font-extrabold mx-12" >Congratulations!</h1>
                   <img class="pl-[125px]" src="./media/1 75.svg" alt="">
                   <h1 class="text-primary text-2xl pt-2 mx-12"><span class="text-[4rem] text-primary font-extrabold">10%</span>OFF</h1>
@@ -144,7 +146,7 @@
   
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
-    console.log(filledInPixels + '%');
+    console.log(filledInPixels +'%');
     if (filledInPixels > 20) {
       canvas.parentNode.removeChild(canvas);
     }
@@ -186,20 +188,34 @@ function handlePercentage(filledInPixels) {
       canvas.parentNode.removeChild(canvas); 
     }
     
+    var bagSection = document.getElementById('bag');
+    if (bagSection) {
+      bagSection.style.display = 'block'; 
+      bagSection.style.display = 'flex'; 
+      bagSection.style.justifyContent = 'center';
+      bagSection.style.alignItems = 'center';
+    }
 
     var barElement = document.getElementById('bar');
     if (barElement) {
-    var busElement = document.createElement('a'); // Change the element to an anchor
+    var busElement = document.createElement('a');
     busElement.id = 'bus';
-    busElement.href = 'scratch_card_barcode.html'; // Set the href attribute to your desired URL
-    busElement.textContent = 'Redeem now'; // Set the link text
+    busElement.href = 'scratch_card_barcode.html';
+    busElement.textContent = 'Redeem now';
     barElement.parentNode.replaceChild(busElement, barElement);
     }
-
     var barElement1 = document.getElementById('bar1');
     if (barElement1) {
     barElement1.parentNode.removeChild(barElement1);
     }
+
+    // var bagElement = document.getElementById('bag')
+    // if (bagElement){
+    // bagElement.parentNode.replaceChild(bagElement);
+    // bagElement.style.display = 'non'
+
+    // }
+  
 
   }
 }
