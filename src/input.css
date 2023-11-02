@@ -105,10 +105,7 @@ a{
     margin-top: 5rem;
 }
 
-/* #bag.canvas{
-    display: flex;
-    justify-content: center;
-} */
+
 
 
 #bag {
@@ -119,7 +116,7 @@ a{
 @media only screen and (max-width:700px){
     #bus{
         margin-left:6rem;
-      }
+    }
   }
 
 
