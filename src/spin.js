@@ -16,7 +16,7 @@
 		},
 		{
 			text: 'No luck',
-			percent: 10 / 100,
+			percent: 1 / 100,
 		},
 		{
 			text: 'Next time',
@@ -28,7 +28,7 @@
 		},
 		{
 			text: '50% off',
-			percent: 10/ 100,
+			percent: 1/ 100,
 		},
 		{
 			text: '5% off',
@@ -111,19 +111,54 @@
 	};
 
 	
+	// const showGift = gift => {
+	// 	let timer = setTimeout(() => {
+	// 		isRotating = false;
+
+	// 		showMsg.innerHTML = ` Congratulations! <br>
+	// 		"${gift.text}"<br>
+		
+	// 		Save up to "${gift.text}" on your next purchase. `;  //*gifttext//*
+			
+	// 		showMsg.style.color = "wheat";
+	// 		showMsg.style.padding = "5rem";
+	// 		showMsg.style.borderStyle = "groove";
+	// 		showMsg.style.backgroundColor = "blue";
+
+	// 		clearTimeout(timer);
+	// 	}, timeRotate);
+	// };
+
 	const showGift = gift => {
 		let timer = setTimeout(() => {
 			isRotating = false;
-
-			showMsg.innerHTML = ` "${gift.text}" `;  //*gifttext//*
+			
+			if (gift.text === "No luck") {
+				showMsg.innerHTML = "better luck next time";
+			}
+			else if(gift.text== "Next time"){
+				showMsg.innerHTML ="better luck next time"
+			}		
+			else if(gift.text== "Free shiping"){
+				showMsg.innerHTML="Free shiping on your next purchase"
+			}
+			else {
+				showMsg.innerHTML = `Save up to "${gift.text}" on your next purchase`;
+			}
+	
 			showMsg.style.color = "wheat";
 			showMsg.style.padding = "5rem";
 			showMsg.style.borderStyle = "groove";
 			showMsg.style.backgroundColor = "blue";
-
+	
 			clearTimeout(timer);
 		}, timeRotate);
 	};
+	
+	btnWheel.addEventListener('click', () => {
+		!isRotating && start();
+	});
+	
 
 	btnWheel.addEventListener('click', () => {
 		!isRotating && start();
