@@ -20,15 +20,15 @@
 		},
 		{
 			text: 'Next time',
-			percent: 5 / 100,
+			percent: 20 / 100,
 		},
 		{
 			text: '10% off',
-			percent: 5 / 100,
+			percent: 10 / 100,
 		},
 		{
 			text: '50% off',
-			percent: 100/ 100,
+			percent: 10/ 100,
 		},
 		{
 			text: '5% off',
@@ -115,7 +115,11 @@
 		let timer = setTimeout(() => {
 			isRotating = false;
 
-			showMsg.innerHTML = ` `;  //*gifttext//*
+			showMsg.innerHTML = ` "${gift.text}" `;  //*gifttext//*
+			showMsg.style.color = "wheat";
+			showMsg.style.padding = "5rem";
+			showMsg.style.borderStyle = "groove";
+			showMsg.style.backgroundColor = "blue";
 
 			clearTimeout(timer);
 		}, timeRotate);
