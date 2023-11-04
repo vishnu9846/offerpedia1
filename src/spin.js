@@ -12,31 +12,31 @@
 	const listGift = [
 		{
 			text: 'Free shiping',
-			percent: 10 / 100,
+			percent: 5 / 100,
 		},
 		{
 			text: 'No luck',
-			percent: 1 / 100,
+			percent: 10 / 100,
 		},
 		{
 			text: 'Next time',
-			percent: 20 / 100,
+			percent: 15 / 100,
 		},
 		{
 			text: '10% off',
-			percent: 10 / 100,
+			percent: 70 / 100,
 		},
 		{
 			text: '50% off',
-			percent: 1/ 100,
+			percent: 100/ 100,
 		},
 		{
 			text: '5% off',
-			percent: 40 / 100,
+			percent: 80 / 100,
 		},
 		{
 			text: 'Spin again',
-			percent: 10 / 100,
+			percent: 60 / 100,
 		},
 		{
 			text: 'So close',
@@ -111,56 +111,42 @@
 	};
 
 	
-	// const showGift = gift => {
-	// 	let timer = setTimeout(() => {
-	// 		isRotating = false;
 
-	// 		showMsg.innerHTML = ` Congratulations! <br>
-	// 		"${gift.text}"<br>
-		
-	// 		Save up to "${gift.text}" on your next purchase. `;  //*gifttext//*
-			
-	// 		showMsg.style.color = "wheat";
-	// 		showMsg.style.padding = "5rem";
-	// 		showMsg.style.borderStyle = "groove";
-	// 		showMsg.style.backgroundColor = "blue";
-
-	// 		clearTimeout(timer);
-	// 	}, timeRotate);
-	// };
 
 	const showGift = gift => {
 		let timer = setTimeout(() => {
 			isRotating = false;
 			
 			if (gift.text === "No luck") {
-				showMsg.innerHTML = "better luck next time";
+				showMsg.innerHTML = '"better luck next time"'
 			}
-			else if(gift.text== "Next time"){
-				showMsg.innerHTML ="better luck next time"
+			else if(gift.text === "Next time"){
+				showMsg.innerHTML = '"better luck next time"'
 			}		
-			else if(gift.text== "Free shiping"){
-				showMsg.innerHTML="Free shiping on your next purchase"
+			else if(gift.text === "Free shiping"){
+				showMsg.innerHTML = '"Spin again"'
+			}
+			else if(gift.text === "So close"){
+				showMsg.innerHTML = "'better luck next time'"
+			}
+			else if(gift.text === "Spin again"){
+				showMsg.innerHTML = '"Spin again"'
 			}
 			else {
-				showMsg.innerHTML = `Save up to "${gift.text}" on your next purchase`;
+				showMsg.innerHTML = `"Save up to "${gift.text}" on your next purchase"`;
 			}
 	
 			showMsg.style.color = "wheat";
 			showMsg.style.padding = "5rem";
-			showMsg.style.borderStyle = "groove";
-			showMsg.style.backgroundColor = "blue";
+			showMsg.style.fontSize = "1.5rem"
+			// showMsg.style.backgroundColor = "blue";
 	
 			clearTimeout(timer);
 		}, timeRotate);
 	};
 	
 	btnWheel.addEventListener('click', () => {
-		!isRotating && start();
+		!isRotating && start("spin");
 	});
 	
-
-	btnWheel.addEventListener('click', () => {
-		!isRotating && start();
-	});
 })();
